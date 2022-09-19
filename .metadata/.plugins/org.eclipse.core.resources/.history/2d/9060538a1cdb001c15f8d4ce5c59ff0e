@@ -1,0 +1,7 @@
+package com.jafa.dto;
+
+public class Member {
+	private String userId;
+	private String email;
+	private String pw;
+}

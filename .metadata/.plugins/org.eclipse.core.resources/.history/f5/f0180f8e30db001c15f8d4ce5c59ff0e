@@ -1,0 +1,5 @@
+package season.summer.config;
+
+public class RootConfig {
+	
+}

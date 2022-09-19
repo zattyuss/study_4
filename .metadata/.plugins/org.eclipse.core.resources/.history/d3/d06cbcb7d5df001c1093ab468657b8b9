@@ -1,0 +1,46 @@
+package protein.controller;
+
+
+@Controller
+@RequestMapping("/board/")
+public class BoardController {
+	
+	@Autowired
+	private BoardService service;
+	
+	@GetMapping("/list")
+	public String getBoardList(Model model) {
+		List<Board> list = service.getList();
+		model.addAttribute("list", list);
+		return "board/list";
+	}
+	
+	@RequestMapping(value = "/get", method = RequestMethod.GET)
+	public String get(Long bno, Model model) {
+		Board board = service.get(bno);
+		model.addAttribute("board",  board);
+		return "board/get";
+	}
+	
+	@PostMapping("/remove")
+	public String delete(Long bno, RedirectAttributes rttr) {
+		service.remove(bno);
+		rttr.addFlashAttribute("message", bno + "Î≤? ?Ç≠?†ú?ï®");
+		return "redirect:list";
+	}
+	
+	@GetMapping("/register")
+	public String registerForm() {
+		return "board/register";
+	}
+	@PostMapping("/register")
+	public String register(Board board, RedirectAttributes rttr) {
+		service.register(board);
+		rttr.addFlashAttribute("message", board.getBno() + "Î≤? ?ì±Î°ùÌï®");
+		return "redirect:list";
+	}
+	@getmapping("/modify")
+	public String modify() {
+		return "board/modify";
+	}
+}

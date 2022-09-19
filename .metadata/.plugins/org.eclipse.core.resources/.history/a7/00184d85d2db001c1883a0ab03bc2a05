@@ -1,0 +1,8 @@
+package me.realtree.config;
+
+import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+
+public class WebConfig extends AbstractAnnotationConfigDispatcherServletInitializer{
+
+		
+}

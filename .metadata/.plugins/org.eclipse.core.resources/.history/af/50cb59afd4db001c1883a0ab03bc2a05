@@ -1,0 +1,5 @@
+package me.realtree.config.controller;
+
+public class HomeController {
+
+}

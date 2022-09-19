@@ -1,0 +1,13 @@
+package config;
+
+import org.springframework.context.annotation.Configuration;
+
+import controller.HomeController;
+
+@Configuration
+public class RootConfig {
+	
+	public HomeController homeController() {
+		return new HomeController();
+	}
+}

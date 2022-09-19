@@ -1,0 +1,5 @@
+1653887937649	Rename package 'protein.mapper'
+1653887955059	Rename package 'protein.dto'
+1653887961844	Rename package 'protein.model'
+1653888119948	Delete element
+1653888122218	Move 'BoardMapper.xml' to 'mapper'

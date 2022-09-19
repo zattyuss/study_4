@@ -1,0 +1,32 @@
+package season.summer.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import dto.Member;
+
+@Controller
+public class HomeController {
+
+	
+	@GetMapping("/summer/gotoo")
+	public String gotoo() {
+		return "gotoo";
+	}
+	@GetMapping("/summer/beach")
+	public String beach(@RequestParam(value="id", defaultValue = "±âº»°ª") String id) {
+		return "beach";
+	}
+	@GetMapping("/summer/Valley")
+	public String Valley() {
+		return "Valley";
+	}
+	@GetMapping("/summer/pool")
+	public String pool(Member member) {
+		System.out.println(member.getUserId());
+		System.out.println(member.getEmail());
+		System.out.println(member.getPw());
+		return "pool:/";
+	}
+}
